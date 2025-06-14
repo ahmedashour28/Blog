@@ -12,7 +12,7 @@
                     <div class="card-header">Edit post</div>
 
                     <div class="card-body">
-                        <form action="{{ route('posts.update',$post->id) }}" method="POST" enctype="multipart/form-data>
+                        <form action="{{ route('posts.update',$post->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -20,7 +20,7 @@
                                 <label for="title" class="col-md-4 col-form-label text-md-end">Title</label>
 
                                 <div class="col-md-6">
-                                    <input id="title" type="text"  name="title"  required  autofocus >
+                                    <input id="title" type="text"  name="title" value="{{$post->title}}"  required  autofocus >
 
                                     @error('title')
                                         <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
                                 <label for="body" class="col-md-4 col-form-label text-md-end">Body</label>
 
                                 <div class="col-md-6">
-                                    <input id="body" type="text"  name="body" required>
+                                    <input id="body" type="text"  name="body" value="{{$post->body}}" required>
 
                                     @error('body')
                                         <span class="invalid-feedback" role="alert">
